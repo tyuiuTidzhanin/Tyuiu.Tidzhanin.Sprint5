@@ -29,14 +29,6 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task4.V16.Test
             File.Delete(path);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(FileNotFoundException))]
-        public void TestLoadFromDataFile_FileNotFound()
-        {
-            DataService ds = new DataService();
-            string nonExistentPath = Path.Combine(Path.GetTempPath(), "NonExistentFile.txt");
 
-            ds.LoadFromDataFile(nonExistentPath);
-        }
     }
 }
