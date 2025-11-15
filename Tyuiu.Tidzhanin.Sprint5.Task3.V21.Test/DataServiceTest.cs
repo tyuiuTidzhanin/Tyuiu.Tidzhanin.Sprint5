@@ -17,16 +17,16 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task3.V21.Test
 
             Assert.IsTrue(File.Exists(path));
 
-            // Читаем из бинарного файла
+            // Читаем из бинарного файла как double
             double result;
             using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
             {
-                result = double.Parse(reader.ReadString());
+                result = reader.ReadDouble();
             }
 
             // Проверяем вычисление: (3² + 1) / √(4*3² - 3) = (9 + 1) / √(36 - 3) = 10 / √33 ≈ 10 / 5.744 ≈ 1.741
             double expected = 1.741;
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, result, 0.001); // Допуск 0.001 для double сравнения
         }
     }
 }

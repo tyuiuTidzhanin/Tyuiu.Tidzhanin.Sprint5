@@ -2,6 +2,7 @@
 using System.IO;
 using tyuiu.cources.programming.interfaces.Sprint5;
 
+
 namespace Tyuiu.Tidzhanin.Sprint5.Task3.V21.Lib
 {
     public class DataService : ISprint5Task3V21
@@ -18,10 +19,10 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task3.V21.Lib
             // Округляем до трех знаков после запятой
             y = Math.Round(y, 3);
 
-            // Записываем в бинарный файл
+            // Записываем в бинарный файл как double
             using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Create)))
             {
-                writer.Write(y.ToString());
+                writer.Write(y); // Записываем непосредственно double
             }
 
             return path;

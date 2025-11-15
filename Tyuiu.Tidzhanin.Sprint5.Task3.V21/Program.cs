@@ -35,10 +35,10 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task3.V21
             string path = ds.SaveToFileTextData(x);
 
             // Читаем результат из бинарного файла
-            double result = 0;
+            double result;
             using (BinaryReader reader = new BinaryReader(File.Open(path, FileMode.Open)))
             {
-                result = double.Parse(reader.ReadString());
+                result = reader.ReadDouble();
             }
 
             // Вычисляем для проверки
@@ -50,7 +50,7 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task3.V21
             Console.WriteLine($"При x = {x}:");
             Console.WriteLine($"y({x}) = ({x}² + 1) / √(4*{x}² - 3) = ({numerator}) / √({4 * Math.Pow(x, 2) - 3}) = {y}");
             Console.WriteLine($"Результат сохранен в файл: {path}");
-            Console.WriteLine($"Содержимое файла: {result}");
+            Console.WriteLine($"Содержимое файла (double): {result}");
             Console.WriteLine("***************************************************************************");
 
             Console.ReadKey();
