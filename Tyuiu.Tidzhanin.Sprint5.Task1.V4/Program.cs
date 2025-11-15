@@ -48,9 +48,11 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task1.V4
             Console.WriteLine("----------------");
 
             string[] lines = File.ReadAllLines(path);
-            for (int i = 2; i < lines.Length; i++) // Пропускаем первые две строки (заголовки)
+            int x = startValue;
+            foreach (string line in lines)
             {
-                Console.WriteLine(lines[i]);
+                Console.WriteLine($"{x}\t{line}");
+                x++;
             }
 
             Console.WriteLine("***************************************************************************");

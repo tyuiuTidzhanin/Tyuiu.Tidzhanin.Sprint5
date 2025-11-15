@@ -18,19 +18,10 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task1.V4.Test
 
             Assert.IsTrue(File.Exists(path));
 
-            string fileContent = File.ReadAllText(path);
+            string fileContent = File.ReadAllText(path).Trim();
+            string expected = "-15,44\n-10,93\n-7,22\n-5,04\n0\n-0,3\n2,57\n6,4\n10,04\n12,72\n14,68";
 
-            // Проверяем, что файл содержит заголовки
-            Assert.IsTrue(fileContent.Contains("x\tf(x)"));
-
-            // Проверяем, что файл содержит данные для всех x от -5 до 5
-            for (int x = startValue; x <= stopValue; x++)
-            {
-                Assert.IsTrue(fileContent.Contains(x.ToString()));
-            }
-
-            // Проверяем особый случай при x = -1 (деление на ноль)
-            Assert.IsTrue(fileContent.Contains("-1\t0"));
+            Assert.AreEqual(expected, fileContent);
         }
     }
 }

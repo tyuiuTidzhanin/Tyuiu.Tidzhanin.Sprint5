@@ -12,9 +12,6 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task1.V4.Lib
 
             using (StreamWriter writer = new StreamWriter(path))
             {
-                writer.WriteLine("x\tf(x)");
-                writer.WriteLine("----------------");
-
                 for (int x = startValue; x <= stopValue; x++)
                 {
                     double value;
@@ -30,7 +27,8 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task1.V4.Lib
                         value = Math.Round(value, 2);
                     }
 
-                    writer.WriteLine($"{x}\t{value}");
+                    // Записываем только значение, без заголовков
+                    writer.WriteLine(value.ToString());
                 }
             }
 
