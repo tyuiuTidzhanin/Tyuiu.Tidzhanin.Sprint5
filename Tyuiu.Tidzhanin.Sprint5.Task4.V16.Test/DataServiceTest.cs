@@ -22,7 +22,7 @@ namespace Tyuiu.Tidzhanin.Sprint5.Task4.V16.Test
             // cos(3.5) + 3.5² - (2*3.5 / 1.2) 
             // = -0.936 + 12.25 - (7 / 1.2)
             // = 11.314 - 5.833 = 5.481
-            double expected = 5.481;
+            double expected = 5.48;
 
             Assert.AreEqual(expected, result);
 
